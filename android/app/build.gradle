@@ -29,6 +29,28 @@ android {
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
+    flavorDimensions "flavor-app"
+
+    productFlavors {
+        dev {
+            dimension "flavor-app"
+            resValue "string", "app_name", "[dev] demo flavor"
+            applicationIdSuffix ".dev"
+        }
+
+        staging {
+            dimension "flavor-app"
+            resValue "string", "app_name", "[stg] demo flavor"
+            applicationIdSuffix ".stg"
+        }
+
+        product {
+            dimension "flavor-app"
+            resValue "string", "app_name", "[prod] demo flavor"
+            applicationIdSuffix ".prod"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
